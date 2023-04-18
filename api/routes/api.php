@@ -23,11 +23,9 @@ Route::group(['prefix' => 'clientes'], function () {
 
     Route::get('/', [ClienteController::class, 'index'])->name('api.clientes.index');
 
-    Route::post('/', [ClienteController::class, 'index'])->name('api.clientes.store');
+    Route::post('/', [ClienteController::class, 'store'])->name('api.clientes.store');
 
-    Route::patch('/{cliente}', [ClienteController::class, 'index'])->name('api.clientes.patch');
+    Route::put('/{cliente}', [ClienteController::class, 'update'])->name('api.clientes.update');
 
-    Route::put('/{cliente}', [ClienteController::class, 'index'])->name('api.clientes.put');
-
-    Route::delete('//{cliente}', [ClienteController::class, 'index'])->name('api.clientes.delete');
+    Route::delete('/{cliente}', [ClienteController::class, 'destroy'])->name('api.clientes.destroy');
 });
